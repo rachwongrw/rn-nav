@@ -13,7 +13,11 @@ const ScreenTwoNavigator = () => {
       <ScreenTwoStack.Screen
         name="ScreenTwoA"
         component={ScreenTwoA}
-        options={{
+        options={Platform.OS === "ios" ?
+        {
+          headerTitle: "1 of 2"
+        } :
+        {
           headerTitle: "1 of 2",
           headerRight: () => <MenuIcon />
         }}
@@ -21,7 +25,11 @@ const ScreenTwoNavigator = () => {
       <ScreenTwoStack.Screen
         name="ScreenTwoB"
         component={ScreenTwoB}
-        options={{
+        options={
+          Platform.OS === "ios" ?
+        {
+          headerTitle: "2 of 2"
+        } :{
           headerTitle: "2 of 2",
           headerRight: () => <MenuIcon />
         }}
