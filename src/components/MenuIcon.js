@@ -5,7 +5,17 @@ import { DrawerActions, useNavigation } from '@react-navigation/native'
 import { useCallback } from 'react'
 
 export default function MenuIcon() {
+  const navigation = useNavigation()
+
+  // similar to useEffect hook
+  const openDrawer = useCallback(() => {
+    navigation.dispatch(DrawerActions.toggleDrawer())
+  }, [])
+
   return (
-    <EvilIcons name="navicon" size={30} color="black" style={{marginRight: 20}}/>
+    <TouchableOpacity onPress={openDrawer}>
+      <EvilIcons name="navicon" size={30} color="black" style={{marginRight: 20}}/>
+    </TouchableOpacity>
+    
   )
 }
