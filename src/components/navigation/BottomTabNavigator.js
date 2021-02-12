@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import ScreenOne from '../../screens/ScreenOne'
 import { EvilIcons } from '@expo/vector-icons'
 import ScreenTwoA from '../../screens/ScreenTwoA'
+import ScreenTwoB from '../../screens/ScreenTwoB'
 
 const BottomTab = createBottomTabNavigator()
 const ScreenOneStack = createStackNavigator()
@@ -50,8 +51,14 @@ const ScreenTwoNavigator = () => {
   return (
     <ScreenTwoStack.Navigator>
       <ScreenTwoStack.Screen
-        name="ScreenTwo"
+        name="ScreenTwoA"
         component={ScreenTwoA}
+        options={{headerTitle: "1 of 2"}}
+      />
+      <ScreenTwoStack.Screen
+        name="ScreenTwoB"
+        component={ScreenTwoB}
+        options={{headerTitle: "2 of 2"}}
       />
     </ScreenTwoStack.Navigator>
   )
