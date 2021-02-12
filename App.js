@@ -12,7 +12,7 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name="Root" component={DrawerNavigator}/>
+          <Stack.Screen name="Root" component={BottomTabNavigator}/>
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

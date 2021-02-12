@@ -1,14 +1,10 @@
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { createStackNavigator } from '@react-navigation/stack'
-import ScreenOne from '../../screens/ScreenOne'
 import { EvilIcons } from '@expo/vector-icons'
-import ScreenTwoA from '../../screens/ScreenTwoA'
-import ScreenTwoB from '../../screens/ScreenTwoB'
+import ScreenOneNavigator from './ScreenOneNavigator'
+import ScreenTwoNavigator from './ScreenTwoNavigator'
 
 const BottomTab = createBottomTabNavigator()
-const ScreenOneStack = createStackNavigator()
-const ScreenTwoStack = createStackNavigator()
 
 export default function BottomTabNavigator() {
 
@@ -32,34 +28,5 @@ export default function BottomTabNavigator() {
       />
       
     </BottomTab.Navigator>
-  );
-}
-
-const ScreenOneNavigator = () => {
-  return (
-    <ScreenOneStack.Navigator>
-      <ScreenOneStack.Screen
-        name="ScreenOne"
-        component={ScreenOne}
-        options={{headerTitle: 'Single-Level Stack'}}
-      />
-    </ScreenOneStack.Navigator>
-  )
-}
-
-const ScreenTwoNavigator = () => {
-  return (
-    <ScreenTwoStack.Navigator>
-      <ScreenTwoStack.Screen
-        name="ScreenTwoA"
-        component={ScreenTwoA}
-        options={{headerTitle: "1 of 2"}}
-      />
-      <ScreenTwoStack.Screen
-        name="ScreenTwoB"
-        component={ScreenTwoB}
-        options={{headerTitle: "2 of 2"}}
-      />
-    </ScreenTwoStack.Navigator>
   )
 }
